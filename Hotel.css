@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background: goldenrod;
+    text-align: center;
+}
+
+.page {
+    margin-top: 40px;
+}
+
+input, select {
+    margin: 6px;
+    padding: 8px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    background: blue;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.hidden {
+    display: none;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+    background: white;
+}
+
+th, td {
+    padding: 10px 15px;
+    border: 1px solid black;
+}
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="Hotel.css">
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page">
+    <h2>Welcome to Our Hotel</h2>
+
+    <label>Name:</label><br>
+    <input type="text" id="name"><br>
+
+    <label>Phone:</label><br>
+    <input type="text" id="phone" maxlength="10" placeholder="10 digit number"><br>
+
+    <label>Select Location:</label><br>
+    <select id="location">
+        <option value="">-- Select City --</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="chennai">Chennai</option>
+        <option value="bangalore">Bangalore</option>
+        <option value="ongole">Ongole</option>
+    </select><br>
+
+    <label>Aadhaar:</label><br>
+    <input type="text" id="aadhar" maxlength="12"
+           placeholder="12 digit Aadhaar"
+           oninput="this.value=this.value.replace(/[^0-9]/g,'')"><br><br>
+
+    <button onclick="goToPage2()">Next</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page hidden">
+    <h2>Select Room & Food</h2>
+
+    <h3>💰 Rates (Per Day)</h3>
+    <div id="rateTable">
+        <p>Please select a location to see rates</p>
+    </div>
+
+    <hr>
+
+    <h3>Room Capacity</h3>
+    <label><input type="radio" name="members" value="2"> 2 Members</label><br>
+    <label><input type="radio" name="members" value="3"> 3 Members</label><br>
+    <label><input type="radio" name="members" value="4"> 4 Members</label><br>
+
+    <h3>Room Type</h3>
+    <label><input type="radio" name="rtype" value="AC"> AC</label><br>
+    <label><input type="radio" name="rtype" value="NON AC"> NON AC</label><br>
+
+    <h3>Food Type</h3>
+    <button onclick="setFood('veg')">Veg</button>
+    <button onclick="setFood('nonveg')">Non Veg</button>
+
+    <h3>Stay Details</h3>
+    <label>From Date:</label><br>
+    <input type="date" id="fromDate" onchange="calculateDays()"><br>
+
+    <label>To Date:</label><br>
+    <input type="date" id="toDate" onchange="calculateDays()"><br>
+
+    <label>Number of Days:</label><br>
+    <input type="number" id="days" readonly><br><br>
+
+    <button onclick="calculateBill()">Generate Bill</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page hidden">
+    <h2>Final Bill</h2>
+    <p id="bill"></p>
+    <button onclick="location.reload()">New Booking</button>
+</div>
+
+<script src="Hotel.js"></script>
+</body>
+</html>
